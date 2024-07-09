@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Random Number Generator</title>
+		<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+	</head>
+	<body>
+		<h1>Random Number Generator</h1>
+		<div id="screen">
+			<div id="history"></div>
+			<div id="number">0</div>
+		</div>
+		
+		<form action="">
+			<h3>Range configuration</h3>
+			<label for="from">From:</label>
+			<input type="number" name="from" id="from" value="1" />
+			<br />
+			<label for="to">To: </label>
+			<input type="number" name="to" id="to" value="10" />
+			<br />
+			<label for="step">Step:</label>
+			<input type="number" name="step" id="step" value="1" />
+		
+			<h3>Repetition</h3>
+			<input type="radio" name="repeat" id="repeat" value="repeat" checked/>
+			<label for="repeat">Repeat.</label>
+			<br />
+			<input type="radio" name="repeat" id="no-sequence" value="no-sequence"/>
+			<label for="no-sequence">Avoid sequence repetitions.</label>
+			<br />
+			<input type="radio" name="repeat" id="no-repeat" value="no-repeat"/>
+			<label for="no-repeat">Avoid any repetitions.</label>
+			
+			<h3>Timming</h3>
+			<input type="checkbox" name="enable-timming" id="enable-timming" />
+			<label for="enable-timming">Enable timming</label>
+			<br />
+			<label for="interval">Interval: </label>
+			<input type="number" name="interval" id="interval" value="1" />
+			<span>s</span>
+			<br />
+			<input type="checkbox" name="end" id="end" />
+			<label for="end">End</label>
+			<label for="max">after </label>
+			<input type="number" name="max" id="max" value="10" />
+			<span>numbers retrieved.</span>
+			
+			<h3>Nearby numbers</h3>
+			<input type="checkbox" name="nearby" id="nearby" />
+			<label for="nearby">Preferably retrieve numbers that are closer to the current number.</label>
+			<br />
+			<h4>Nearby range</h4>
+			<p class="discripition">The range of numbers that are considered "close" to the current number, above and below.</p>
+			<input type="range" name="closer" id="closer-range" value="3" />
+			<input type="number" name="closer" id="closer-number" value="3" />
+			<br />
+			<h4>Distribute probability</h4>
+			<p class="discripition">Define rather the closest numbers have higher chances to be retrieved. Numbers outside of the "nearby range" always have 0% chance to ber retrieved.</p>
+			<input type="radio" name="probability" id="equal" />
+			<label for="evenly">Equal in the range</label>
+			<input type="radio" name="probability" id="higher-to-closer" />
+			<label for="higher-to-closer">Higher to the closer</label>
+		</form>
+	</body>
+</html>
